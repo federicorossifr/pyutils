@@ -30,8 +30,8 @@ def recursiveList(road,dst,ignored,ext):
 
 
 
-ignore = {'cp','sys','dev','bin'}
-srch = {'.pdf','.conf'}
+ignore = {} #filter folder and files
+srch = {} #filter files extensions
 
 try:
 	os.makedirs("recpy");
