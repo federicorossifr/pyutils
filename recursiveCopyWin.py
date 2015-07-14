@@ -6,7 +6,7 @@ import sys
 def recursiveList(road,dst,ignored,ext):
 	dirs = os.listdir(road)  #list files or directories in root directory
 	for adir in dirs:   
-		curr = road+'/'+adir #get path
+		curr = road+'\\'+adir #get path
 
 		if adir in ignored:
 			continue
@@ -30,16 +30,16 @@ def recursiveList(road,dst,ignored,ext):
 				print("Skipped: "+curr,end='\n')
 
 
-start = sys.argv[1]
-ignore = {} #filter folder and files
-srch = {} #filter files extensions
+start = "C:\\"
+ignore = {'Windows'} #filter folder and files
+srch = {'.pdf'} #filter files extensions
 
 try:
 	os.makedirs("recpy");
 except(FileExistsError) as e:
 	print('') 	
 
-recursiveList('/','recpy/',ignore,srch)
+recursiveList(start,'recpy/',ignore,srch)
 
 
 
